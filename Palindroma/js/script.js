@@ -13,13 +13,13 @@ palindromo.innerHTML = checkPalindromo(stringa);
 
 function checkPalindromo(str) {
 
-   // find the length of a string
+   // trova la lunghezza della stringa
    const lunghezza = str.length;
 
-   // loop through half of the string
+   // dai un iterazione sulla metá lunghezza della parola
    for (let i = 0; i < lunghezza / 2; i++) {
 
-       // check if first and last string are same
+       // controllo se la prima l'ultima lettera sono uguali, e cosí via, seconda e penultima, ecc...
        if (str[i] !== str[lunghezza - 1 - i]) {
            return 'La parola inserita NON é palindroma';
        }
