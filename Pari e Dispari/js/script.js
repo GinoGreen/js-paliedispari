@@ -6,25 +6,37 @@
 // Dichiariamo chi ha vinto.
 
 //chiedere all'utente di scegliere tra pari o dispari
-const stringaPariDispari;
+let stringaPariDispari;
 
 do {
 
    stringaPariDispari = prompt('Inserisci pari o dispari');
 
    //faccio un controllo sulla corretta grammatica
-   if (stringaPariDispari != 'pari' || stringaPariDispari != 'dispari') {
+   if (stringaPariDispari != 'pari' && stringaPariDispari != 'dispari') {
       alert('Inserisci correttamente pari o dispari');
    }
 
-} while (stringaPariDispari != 'pari' || stringaPariDispari != 'dispari');
+} while (stringaPariDispari != 'pari' && stringaPariDispari != 'dispari');
 
 //imposto una variabile booleana per controllare cosa ha scelto l'utente
 let valuePariDispari = false;
 
 //chiedere all'utente di inserire un numero da 1 a 5
-const numeroUtente = 5;
+let numeroUtente;
+
 //controllo se il numbero é compreso tra 1 e 5, in caso contrario, ripetere la richiesta
+do {
+   
+   numeroUtente = parseInt(prompt('Inserisci un numbero da 1 a 5'));
+
+   if (numeroUtente < 1 || numeroUtente > 5) {
+      
+      alert('Inserisci un numero compreso tra 1 e 5');
+
+   }
+
+} while (numeroUtente < 1 || numeroUtente > 5);
 
 //controllo se l'utente ha scelto pari o dispari
 if (stringaPariDispari === 'pari' || stringaPariDispari === 'Pari') {
@@ -46,7 +58,7 @@ console.log('la somma dei due numeri é: ', somma);
 //controllo se la somma é pari o dispari
 const valueSommaPariDispari = getPariDispari(somma);
 
-console.log('la somma é false se é dispari, true se é pari: ', valueSommaPariDispari);
+console.log('Il valore booleano della somma é false se é dispari, true se é pari: ', valueSommaPariDispari);
 
 //controllo il vincitore
 const esito = document.getElementById('esito');
@@ -54,7 +66,7 @@ const esito = document.getElementById('esito');
 if (valuePariDispari === valueSommaPariDispari) {
    esito.innerHTML = `L'utente ha vinto`;
 } else {
-   esito.innerHTML = 'Il compute ha vinto';
+   esito.innerHTML = 'Il computer ha vinto';
 }
 
 //funzioni
